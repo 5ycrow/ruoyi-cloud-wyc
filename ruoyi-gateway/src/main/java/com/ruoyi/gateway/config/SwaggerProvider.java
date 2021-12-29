@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.config.GatewayProperties;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.support.NameUtils;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.config.ResourceHandlerRegistry;
 import org.springframework.web.reactive.config.WebFluxConfigurer;
@@ -14,9 +15,10 @@ import springfox.documentation.swagger.web.SwaggerResourcesProvider;
 
 /**
  * 聚合系统接口
- * 
+ *
  * @author ruoyi
  */
+@Primary
 @Component
 public class SwaggerProvider implements SwaggerResourcesProvider, WebFluxConfigurer
 {
@@ -35,7 +37,7 @@ public class SwaggerProvider implements SwaggerResourcesProvider, WebFluxConfigu
 
     /**
      * 聚合其他服务接口
-     * 
+     *
      * @return
      */
     @Override
